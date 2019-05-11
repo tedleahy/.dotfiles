@@ -1,0 +1,38 @@
+#!/bin/bash
+
+function play-pause() {
+   if pgrep mpv; then 
+     xdotool key --window "$(xdotool search --class mpv)" p
+   elif playerctl status; then 
+     playerctl play-pause 
+   fi
+}
+
+function previous() {
+  if pgrep mpv; then
+     xdotool key --window "$(xdotool search --class mpv)" less
+  elif playerctl status; then
+    playerctl previous
+  fi
+}
+
+function next() {
+  if pgrep mpv; then
+     xdotool key --window "$(xdotool search --class mpv)" greater 
+  elif playerctl status; then
+    playerctl next
+  fi
+}
+
+case $1 in
+  "play-pause")
+    play-pause
+    ;;
+  "previous")
+    previous
+    ;;
+  "next")
+    next
+    ;;
+esac
+

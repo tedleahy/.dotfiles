@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+require 'fileutils'
+
+if ARGV[0].nil?
+  puts "No destination filename specified. Exiting..."
+  exit
+end
+
+screenshot = Dir.glob('/home/ted/Pictures/Screenshot from*.png').first || Dir.glob('/home/ted/Pictures/appended.png').first
+
+if screenshot.nil?
+  puts "No screenshots found in ~/Pictures. Exiting..."
+  exit
+end
+
+if !Dir.exists?('img')
+  puts "No ./img directory. Creating one for you..."
+  FileUtils.mkdir('img')
+end
+
+dest_dir = "#{FileUtils.pwd}/img"
+
+# Handle existing files w/ the same name
+imgs = Dir.glob("#{dest_dir}/*")
+# Select all imgs where the file ends in the specified filename, or does so followed by a number
+same_name_imgs = imgs.select { |img| /(#{ARGV[0]}\d|#{ARGV[0]}\.)/.match?(img) }
+
+appendedNum = same_name_imgs.length + 1 if same_name_imgs.length > 0 
+
+dest_filename = "#{ARGV[0]}#{appendedNum}.png"
+
+FileUtils.cd('/home/ted/Pictures/')
+FileUtils.mv(screenshot, dest_filename)
+system("trim_pad #{dest_filename}")
+FileUtils.mv(dest_filename, dest_dir)
+system("echo '![](img/#{dest_filename})' | xclip -sel clip")

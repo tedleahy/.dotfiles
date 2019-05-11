@@ -1,0 +1,10 @@
+#!/usr/bin/zsh
+
+# Script that commits all my config files once every day
+
+cd ~/config_files
+git add -A
+date=$(date +"%m/%d/%Y %H:%M")
+git commit -m "$date - Daily backup"
+git push origin master
+

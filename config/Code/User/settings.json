@@ -1,0 +1,72 @@
+{
+    "editor.fontFamily": "'Droid Sans Mono Slashed for Powerline Regular', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontSize": 18,
+    "editor.formatOnPaste": true,
+    "editor.lineNumbers": "relative",
+    "editor.minimap.enabled": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.rulers": [130],
+    "editor.tabSize": 2,
+
+    "workbench.activityBar.visible": false,
+    "workbench.colorTheme": "Quiet Light",
+    "workbench.editor.enablePreview": false,
+    "workbench.iconTheme": "file-icons",
+    "workbench.list.horizontalScrolling": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.statusBar.feedback.visible": false,
+
+    "breadcrumbs.enabled": true,
+    "emmet.triggerExpansionOnTab": true,
+    "explorer.autoReveal": false,
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "html.format.wrapLineLength": 130,
+    "ruby.specCommand": "bin/rspec",
+    "ruby.specSaveFile": true,
+    "search.location": "panel",
+    "search.quickOpen.includeSymbols": true,
+    "terminal.integrated.fontFamily": "DroidSansMono Nerd Font",
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.rendererType": "dom",
+    "window.menuBarVisibility": "toggle",
+    "window.zoomLevel": 0,
+
+    "keyboard.dispatch": "keyCode", // allows caps lock -> escape remapping to be recognised
+    "vim.useSystemClipboard": true,
+    "vim.handleKeys": {
+        "<C-f>": false,
+        "<C-w>": false,
+        "<C-t>": false,
+        "<C-b>": false,
+        "<C-k>": false,
+        "<C-x>": false,
+        "<C-c>": false,
+        "<C-a>": false
+        // "<C-o>": false
+    },
+
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                {
+                    "command": "editor.action.indentLines"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                {
+                    "command": "editor.action.outdentLines"
+                }
+            ]
+        },
+    ],
+    "vim.debug.silent": true,
+}

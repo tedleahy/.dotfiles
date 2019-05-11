@@ -1,0 +1,84 @@
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
+h1 {
+  text-align: center;
+  font-size: 38px;
+  font-weight: bold;
+  color: #B58900;
+  border-bottom: 1px solid #cccccc;
+  text-transform: uppercase;
+  margin-bottom: 50px; 
+}
+
+h2 {
+  font-size: 32px;
+  border-bottom: 1px solid #cccccc;
+  color: #773636;
+  padding-top: 5px;
+  padding-bottom: 25px; 
+}
+
+h3 {
+  font-size: 25px;
+  color: #195073;
+  margin-bottom: 25px; 
+  margin-top: 40px;
+}
+
+h4 {
+  font-size: 20px;
+  color: #0f74f0;
+  text-align: left; 
+}
+
+h5 {
+  font-size: 18px;
+  color: #477345;
+  text-align: left; 
+}
+
+h6 {
+  color: #777777;
+  font-size: 15px; 
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+hr {
+  width: 80%;
+  margin: 50px 0px 50px 10%;
+  background-color: #b1b1b1;
+}
+
+div.CodeMirror, code {
+  font-family: Monospace Regular;
+}
+
+div.mathjax-block span.MathJax_SVG {
+  font-size: 140% !important;
+}
+
+span.inline-math-svg {
+  font-size: 130% !important;
+}
+
+ul {
+  margin-bottom: 40px;
+}
+
+blockquote {
+  text-align: center;
+  border-left: 2px solid #dfe2e5;
+  border-right: 2px solid #dfe2e5;
+}
+
+div#write {
+  max-width: 1000px;
+}

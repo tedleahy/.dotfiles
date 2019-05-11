@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+require 'fileutils'
+
+sshots = Dir.glob('/home/ted/Pictures/Screenshot from*.png').sort
+
+tpa_args = ""
+
+FileUtils.cd '/home/ted/Pictures'
+
+# Rename all screenshots
+sshots.each_with_index do |s, i|
+  new_name = "#{i+1}.png"
+
+  FileUtils.mv(s, new_name)
+  tpa_args += new_name + " "
+end
+
+# Remove trailing space
+tpa_args.chomp! " "
+
+system "/home/ted/config_files/Scripts/trim_pad_append.sh #{tpa_args}"

@@ -1,0 +1,49 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+  {
+    "key": "shift+alt+t",
+    "command": "extension.runFileSpecs"
+  },
+  {
+    "key": "shift+meta+t",
+    "command": "-extension.runFileSpecs"
+  },
+  {
+    "key": "alt+y",
+    "command": "extension.runLastSpec"
+  },
+  {
+    "key": "meta+y",
+    "command": "-extension.runLastSpec"
+  },
+  {
+    "key": "alt+l",
+    "command": "-toggleFindInSelection",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+l",
+    "command": "extension.runSpecLine"
+  },
+  {
+    "key": "meta+l",
+    "command": "-extension.runSpecLine"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "-extension.vim_ctrl+j",
+    "when": "editorTextFocus && vim.active && vim.use<C-j> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+",
+    "command": "workbench.action.terminal.focusPrevious"
+  },
+  {
+    "key": "alt+`",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "-workbench.action.terminal.toggleTerminal"
+  }
+]
