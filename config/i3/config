@@ -11,7 +11,7 @@ gaps outer $gaps_outer
 font pango:"Droid Sans Mono Slashed for Powerline 11"
 set $mod Mod4
 set $term st
-set $flash --no-startup-id bash ~/config_files/Scripts/flash_win.sh
+set $flash --no-startup-id bash ~/.scripts/flash_win.sh
 
 # Default Floating
 for_window [class="Gtk-example"] floating enable
@@ -22,8 +22,7 @@ for_window [class="Ghc"] floating enable
 #Increase key rate
 exec --no-startup-id xset r rate 300 50
 #Set wallpaper:
-#exec_always ~/config_files/Scripts/wallpaper.sh
-exec_always feh --bg-tile ~/.config/wall.jpg
+exec_always feh --bg-tile ~/.config/misc/wall.jpg
 #Wifi applet:
 exec --no-startup-id nm-applet
 #Start Guake (drop-down terminal)
@@ -54,42 +53,41 @@ set $mute --no-startup-id pamixer --allow-boost -t
 
 
 ###---Basic Bindings---###
-bindsym $mod+Return 		exec $term
-bindsym $mod+Shift+Return 	exec $term -e tmux
+bindsym $mod+Return 		  exec $term
+bindsym $mod+Shift+Return exec $term -e tmux
 
 bindsym $mod+Shift+space 	floating toggle
-bindsym $mod+space		focus mode_toggle
+bindsym $mod+space		    focus mode_toggle
 
-bindsym $mod+Escape		workspace prev
+bindsym $mod+Escape		    workspace prev
 bindsym $mod+Shift+Escape exit
 
 bindsym $mod+BackSpace		exec $flash
-#bindsym $mod+Shift+BackSpace exec ~/config_files/Scripts/wallpaper.sh
+#bindsym $mod+Shift+BackSpace
 
-bindsym $mod+grave        exec ~/config_files/Scripts/monitors.sh e
-bindsym $mod+Shift+grave  exec ~/config_files/Scripts/monitors.sh l 
+bindsym $mod+grave        exec ~/.scripts/monitors.sh e
+bindsym $mod+Shift+grave  exec ~/.scripts/monitors.sh l 
 
 #bindsym $mod+asciitilde
 
 ###---Letter Key Bindings---###
-bindsym $mod+q			kill
+bindsym $mod+q			    kill
 # bindsym $mod+Shift+q
 
-bindsym $mod+w layout tabbed
+bindsym $mod+w          layout tabbed
 # bindsym $mod+Shift+w
 
-bindsym $mod+e layout toggle split
-bindsym $mod+Shift+e layout toggle all
+bindsym $mod+e          layout toggle split
+bindsym $mod+Shift+e    layout toggle all
 
 bindsym $mod+r 					exec $term -e ranger
 bindsym $mod+Shift+r		reload
 
-#bindsym $mod+t 					split toggle
-bindsym $mod+t          exec zathura ~/Documents/Textbooks/Edward\ R.\ Tufte\ -\ The\ Visual\ Display\ of\ Quantitative\ Information-Graphics\ Pr\ \(2001\).pdf
+# bindsym $mod+t 				  
 bindsym $mod+Shift+t		gaps inner current set $gaps_inner; gaps outer current set $gaps_outer
 
-bindsym $mod+y              resize shrink width 5 px or 5 ppt
-bindsym $mod+Shift+y	    resize shrink width 2 px or 2 ppt
+bindsym $mod+y          resize shrink width 5 px or 5 ppt
+bindsym $mod+Shift+y	  resize shrink width 2 px or 2 ppt
 
 bindsym $mod+u          scratchpad show
 bindsym $mod+Shift+u		resize shrink height 5 px or 5 ppt
@@ -97,27 +95,23 @@ bindsym $mod+Shift+u		resize shrink height 5 px or 5 ppt
 bindsym $mod+i 					exec $term -e htop
 bindsym $mod+Shift+i		resize grow height 5 px or 5 ppt
 
-bindsym $mod+o              resize grow width 5 px or 5 ppt
-bindsym $mod+Shift+o	    resize grow width 2 px or 2 ppt
+bindsym $mod+o          resize grow width 5 px or 5 ppt
+bindsym $mod+Shift+o	  resize grow width 2 px or 2 ppt
 
-bindsym $mod+p          exec ~/.config/Scripts/dmenuunicode
+bindsym $mod+p          exec ~/.scripts/dmenuunicode
 bindsym $mod+Shift+p		exec ~/.config/polybar/launch.sh
 
-bindsym $mod+a          exec ~/.config/Scripts/polybar_show_hide.sh
+bindsym $mod+a          exec ~/.scripts/polybar_show_hide.sh
 bindsym $mod+Shift+a		exec pavucontrol
 
 bindsym $mod+s					gaps inner current plus 5
 bindsym $mod+Shift+s		gaps inner current minus 5
 
-bindsym $mod+d				exec  rofi -show run -lines 7 -width 40 -theme "paper-float" -dpi 1
+bindsym $mod+d				  exec  rofi -show run -lines 7 -width 40 -theme "paper-float" -dpi 1
 bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
 
 bindsym $mod+f					fullscreen toggle
-bindsym $mod+Shift+f    mode "Open Document"
-
-mode "Open Document" {
-  bindsym h exec zathura ~/Documents/Textbooks/Programming\ in\ Haskell\ 2nd\ Edition.pdf; mode "default"
-}
+# bindsym $mod+Shift+f
 
 bindsym $mod+g					workspace prev
 # bindsym $mod+Shift+g
