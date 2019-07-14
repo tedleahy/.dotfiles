@@ -44,7 +44,7 @@ pman() { man -Tpdf $1 | zathura - }
 tt () { touch $1 && typora $1 & }
 
 # ls after changing directory
-chpwd() ls
+chpwd() lsd
 
 alias r="ranger"
 alias rd="ranger ~/Downloads"
@@ -70,8 +70,8 @@ alias plb="sleep 15m && play ~/Music/ding.wav"
 alias lock_and_suspend="i3lockmore -ef --blur 4 --lock-icon ~/.config/i3/lock.png && systemctl suspend"
 alias pip_i="pip install --user"
 
-alias cpscrshot="~/config_files/Scripts/cpscrshot"
-alias gmd="~/config_files/Scripts/generate_markdown_contents"
+alias cpscrshot="~/.scripts/cpscrshot"
+alias gmd="~/.scripts/generate_markdown_contents"
 
 alias yi="yay --noconfirm -S"
 alias yr="yay -R"
@@ -86,7 +86,7 @@ alias aqs="dpkg -l"
 alias aup="sudo apt update && sudo apt upgrade"
 
 alias cfz="vim ~/.zshrc"
-alias cfset="vim ~/config_files/Scripts/setup.sh"
+alias cfset="vim ~/.scripts/setup.sh"
 alias cfp="vim ~/.config/polybar/config"
 alias cfr="vim ~/.config/redshift/redshift.conf"
 alias cfd="vim ~/Build/dwm/config.h"
@@ -120,9 +120,6 @@ if which ruby >/dev/null && which gem >/dev/null; then
     PATH="~/.rbenv/versions/$(cat ~/.rbenv/version)/bin:$PATH"
 fi
 
-# Pip (python packages)
-if which pip >/dev/null; then
-#    PATH="~/.local/bin:$PATH"
-fi
+PATH="~/.local/bin:$PATH"
 
 fpath=($fpath "/home/ted/.zfunctions")
