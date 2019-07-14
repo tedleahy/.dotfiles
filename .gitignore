@@ -14,6 +14,7 @@ config/Code/machineid
 config/Code/rapid_render.json
 config/Code/storage.json
 config/mpv/watch_later/
+config/ranger/bookmarks
 config/Typora/draftsRecover/
 config/Typora/GPUCache/
 config/Typora/Local Storage/

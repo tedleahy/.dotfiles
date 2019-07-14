@@ -40,7 +40,7 @@ module-margin-left = 1
 module-margin-right = 2
 
 ;font-0 = "DroidSansMono Nerd Font:style=Book:size=14;1"
-font-0 = "DroidSansMono Nerd Font:style=Book:size=14;1"
+font-0 = "DroidSansMono Nerd Font:style=Book:size=13;1"
 ;font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
 font-1 = FontAwesome:fontformat=truetype:size=10:antialias=false;0
 font-2 = Wuncon Siji:pixelsize=13;1
@@ -415,8 +415,8 @@ menu-2-1-exec = menu-open-0
 type = custom/script
 
 ; awk stuff just truncates the song title
-;exec = echo  `playerctl -p spotify metadata xesam:artist` - `playerctl -p spotify metadata xesam:title | awk -v len=30 '{ if (length($0) > len) print substr($0, 1, len-3) "..."; else print; }'` - `playerctl -p spotify metadata xesam:album`
-exec = echo  `playerctl -p spotify metadata xesam:artist` - `playerctl -p spotify metadata xesam:title | cut -d'-' -f1`
+exec = echo  `playerctl -p spotify metadata xesam:artist` - `playerctl -p spotify metadata xesam:title | awk -v len=30 '{ if (length($0) > len) print substr($0, 1, len-3) "..."; else print; }'` - `playerctl -p spotify metadata xesam:album`
+;exec = echo  `playerctl -p spotify metadata xesam:artist` - `playerctl -p spotify metadata xesam:title | cut -d'-' -f1`
 exec-if = pgrep -x spotify
 ;tail = true ; output continously
 interval = 1

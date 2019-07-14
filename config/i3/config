@@ -4,7 +4,7 @@
 #Needed for i3-gaps
 #hide_edge_borders both
 for_window [class="^.*"] border pixel 2
-set $gaps_inner 0
+set $gaps_inner 10
 set $gaps_outer 0 
 gaps inner $gaps_inner
 gaps outer $gaps_outer
@@ -83,7 +83,7 @@ bindsym $mod+Shift+e    layout toggle all
 bindsym $mod+r 					exec $term -e ranger
 bindsym $mod+Shift+r		reload
 
-# bindsym $mod+t 				  
+bindsym $mod+t 				  exec zathura ~/Documents/Textbooks/'Haskell Programming from First Principles.pdf'
 bindsym $mod+Shift+t		gaps inner current set $gaps_inner; gaps outer current set $gaps_outer
 
 bindsym $mod+y          resize shrink width 5 px or 5 ppt
@@ -131,7 +131,7 @@ bindsym $mod+Shift+l		move right 30
 bindsym $mod+z					gaps outer current plus 5
 bindsym $mod+Shift+z		gaps outer current minus 5
 
-bindsym $mod+x              exec --no-startup-id i3lockmore -ef --blur 4 --lock-icon ~/.config/i3/lock.png && systemctl suspend
+bindsym $mod+x          exec --no-startup-id i3lockmore -ef --pixelate 7 --lock-icon ~/.config/i3/lock.png && systemctl suspend
 bindsym $mod+Shift+x		exec sudo shutdown -h now
 
 bindsym $mod+c					exec --no-startup-id chromium --app="https://calendar.google.com"
@@ -140,8 +140,8 @@ bindsym $mod+c					exec --no-startup-id chromium --app="https://calendar.google.
 bindsym $mod+v       split toggle
 bindsym $mod+Shift+v focus parent
 
-bindsym $mod+b          exec --no-startup-id firefox
-bindsym $mod+Shift+b    exec --no-startup-id firefox --private-window
+bindsym $mod+b          exec --no-startup-id chromium
+bindsym $mod+Shift+b    exec --no-startup-id chromium --incognito
 
 bindsym $mod+n          exec --no-startup-id google-chrome-stable --app="https://netflix.com"
 # bindsym $mod+Shift+n
@@ -254,9 +254,9 @@ bindsym XF86AudioLowerVolume	      exec $dec
 bindsym Shift+XF86AudioLowerVolume	exec $smalldec
 bindsym XF86AudioRaiseVolume	      exec $inc
 bindsym Shift+XF86AudioRaiseVolume	exec $smallinc
-bindsym $mod+XF86AudioMute             exec ~/.config/Scripts/media_control previous
-bindsym $mod+XF86AudioLowerVolume      exec ~/.config/Scripts/media_control play-pause
-bindsym $mod+XF86AudioRaiseVolume      exec ~/.config/Scripts/media_control next
+bindsym $mod+XF86AudioMute             exec ~/.scripts/media_control previous
+bindsym $mod+XF86AudioLowerVolume      exec ~/.scripts/media_control play-pause
+bindsym $mod+XF86AudioRaiseVolume      exec ~/.scripts/media_control next
 bindsym XF86PowerOff		exec sudo shutdown -h now
 #bindsym XF86Copy		exec
 #bindsym XF86Open		exec
@@ -279,9 +279,9 @@ bindsym XF86MyComputer		exec $term -e ranger
 #bindsym XF86Back		exec
 #bindsym XF86Forward		exec
 bindsym XF86Eject		exec sudo umount -R /mnt
-bindsym XF86AudioNext		exec ~/.config/Scripts/media_control next
-bindsym XF86AudioPlay		exec ~/.config/Scripts/media_control play-pause
-bindsym XF86AudioPrev		exec ~/.config/Scripts/media_control previous
+bindsym XF86AudioNext		exec ~/.scripts/media_control next
+bindsym XF86AudioPlay		exec ~/.scripts/media_control play-pause
+bindsym XF86AudioPrev		exec ~/.scripts/media_control previous
 #bindsym XF86AudioStop
 bindsym XF86AudioRecord		exec $audio
 bindsym XF86AudioRewind		exec $lilbak
