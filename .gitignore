@@ -13,3 +13,16 @@ config/Code/logs/
 config/Code/machineid
 config/Code/rapid_render.json
 config/Code/storage.json
+config/mpv/watch_later/
+config/Typora/draftsRecover/
+config/Typora/GPUCache/
+config/Typora/Local Storage/
+config/Typora/SS
+config/Typora/SingletonCookie
+config/Typora/SingletonLock
+config/Typora/backups
+config/Typora/dictionaries/
+config/Typora/history.data
+config/Typora/profile.data
+config/Typora/typora.log
+
