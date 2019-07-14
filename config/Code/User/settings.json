@@ -69,4 +69,6 @@
         },
     ],
     "vim.debug.silent": true,
+    "explorer.openEditors.visible": 0,
+    "solargraph.formatting": true,
 }
