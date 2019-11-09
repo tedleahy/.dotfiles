@@ -28,7 +28,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3 
-line-color = {$xrdb:color1}
+line-color = #f22c40
 
 border-size = 0
 border-color = #00000000
@@ -211,7 +211,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${xrdb:color1}
+format-underline = #f22c40
 label = %percentage%%
 
 [module/memory]
@@ -219,7 +219,7 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${xrdb:color6}
+format-underline = #00ad9c
 label = %percentage_used%%
 
 [module/wlan]
@@ -228,7 +228,7 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected =  <label-connected>
-format-connected-underline = ${xrdb:color5}
+format-connected-underline = #6666ea
 ;format-connected-underline = #9f78e1
 label-connected = %essid%
 
@@ -251,8 +251,8 @@ type = internal/network
 interface = enp0s25
 interval = 3.0
 
-format-connected-underline = ${xrdb:color2}
-;format-connected-underline = ${xrdb:color10}
+format-connected-underline = #5ab738
+;format-connected-underline = #5ab738
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
@@ -282,7 +282,7 @@ time = " %I:%M%p "
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${xrdb:color12}
+format-underline = #407ee7
 ;format-underline = #0a6cf5
 
 label = %date% | %time%
@@ -299,13 +299,13 @@ format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
 
 bar-volume-width = 10
-bar-volume-foreground-0 = ${xrdb:color10}
-bar-volume-foreground-1 = ${xrdb:color10}
-bar-volume-foreground-2 = ${xrdb:color10}
-bar-volume-foreground-3 = ${xrdb:color10}
-bar-volume-foreground-4 = ${xrdb:color10}
-bar-volume-foreground-5 = ${xrdb:color11}
-bar-volume-foreground-6 = ${xrdb:color1}
+bar-volume-foreground-0 = #5ab738
+bar-volume-foreground-1 = #5ab738
+bar-volume-foreground-2 = #5ab738
+bar-volume-foreground-3 = #5ab738
+bar-volume-foreground-4 = #5ab738
+bar-volume-foreground-5 = #d5911a
+bar-volume-foreground-6 = #f22c40
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
@@ -325,7 +325,7 @@ full-at = 98
 
 ;format-charging = Charging... <label-charging>
 format-charging = Charging... <animation-charging> <label-charging>
-format-charging-underline = ${xrdb:color3}
+format-charging-underline = #d5911a
 
 ;format-discharging = <label-discharging>
 format-discharging = <ramp-capacity> <label-discharging>
@@ -353,7 +353,7 @@ exec = echo "BAT0: `cat /sys/class/power_supply/BAT0/capacity`%"
 [module/battery_total]
 type = custom/script
 exec = ~/.scripts/total_battery.sh
-format-underline = ${xrdb:color3}
+format-underline = #d5911a
 interval = 1 
 
 [module/temperature]
@@ -362,7 +362,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = ${xrdb:color1}
+format-underline = #f22c40
 ;format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}

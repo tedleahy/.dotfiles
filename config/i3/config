@@ -4,11 +4,7 @@
 #Needed for i3-gaps
 #hide_edge_borders both
 for_window [class="^.*"] border pixel 2
-set $gaps_inner 10
-set $gaps_outer 0 
-gaps inner $gaps_inner
-gaps outer $gaps_outer
-font pango:"Droid Sans Mono Slashed for Powerline 11"
+font pango:"Droid Sans Mono Nerd Font 11"
 set $mod Mod4
 set $term st
 set $flash --no-startup-id bash ~/.scripts/flash_win.sh
@@ -25,6 +21,8 @@ exec --no-startup-id xset r rate 300 50
 exec_always feh --bg-tile ~/.config/misc/wall.jpg
 #Wifi applet:
 exec --no-startup-id nm-applet
+#Bluetooth applet:
+exec --no-startup-id blueman-applet
 #Start Guake (drop-down terminal)
 exec --no-startup-id guake
 #Enable tap-to-click
@@ -65,8 +63,8 @@ bindsym $mod+Shift+Escape exit
 bindsym $mod+BackSpace		exec $flash
 #bindsym $mod+Shift+BackSpace
 
-bindsym $mod+grave        exec ~/.scripts/monitors.sh e
-bindsym $mod+Shift+grave  exec ~/.scripts/monitors.sh l 
+bindsym $mod+grave        exec zsh ~/.scripts/monitors.sh e
+bindsym $mod+Shift+grave  exec zsh ~/.scripts/monitors.sh l 
 
 #bindsym $mod+asciitilde
 
@@ -132,7 +130,7 @@ bindsym $mod+z					gaps outer current plus 5
 bindsym $mod+Shift+z		gaps outer current minus 5
 
 bindsym $mod+x          exec --no-startup-id i3lockmore -ef --pixelate 7 --lock-icon ~/.config/i3/lock.png && systemctl suspend
-bindsym $mod+Shift+x		exec sudo shutdown -h now
+bindsym $mod+Shift+x		exec i3lockmore -ef --pixelate 7 --lock-icon ~/.config/i3/lock.png
 
 bindsym $mod+c					exec --no-startup-id chromium --app="https://calendar.google.com"
 # bindsym $mod+Shift+c

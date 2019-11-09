@@ -80,9 +80,10 @@ alias yqs="yay -Qs"
 alias yup="yay --noconfirm -Syyu && yay --noconfirm -Syyua"
 
 alias ai="sudo apt install -y"
+alias dpkgi="sudo dpkg -i"
 alias ar="sudo apt purge"
 alias as="apt-cache search"
-alias aqs="dpkg -l"
+alias aqs="dpkg -l | grep"
 alias aup="sudo apt update && sudo apt upgrade"
 
 alias cfz="vim ~/.zshrc"
@@ -101,15 +102,13 @@ alias gd="git diff"
 alias gs="git status"
 alias gp="git push"
 
+# Rails aliases
+alias rdm="rails db:migrate"
+alias rdr="rails db:rollback"
+
 alias stepsreset="rake db:drop && rake db:create && rake db:migrate && rake db:seed && rake forms:import && rake fake:all"
 
-alias rake="bin/rake"
-alias rspec="bin/rspec"
 alias rrg="rake routes | grep"
-
-if which rbenv > /dev/null; then
-    eval "$(rbenv init -)"
-fi
 
 if which thefuck > /dev/null; then
     eval $(thefuck --alias)
@@ -120,6 +119,19 @@ if which ruby >/dev/null && which gem >/dev/null; then
     PATH="~/.rbenv/versions/$(cat ~/.rbenv/version)/bin:$PATH"
 fi
 
-PATH="~/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="/sbin:$PATH"
+export PATH="/snap/bin:$PATH"
 
-fpath=($fpath "/home/ted/.zfunctions")
+# opt out of .NET data collection by microsoft
+export DOTNET_CLI_TELEMETRY_OPTOUT="true"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+if which rbenv > /dev/null; then
+	eval "$(rbenv init -)"
+fi
+
