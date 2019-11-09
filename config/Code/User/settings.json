@@ -9,7 +9,7 @@
     "editor.tabSize": 2,
 
     "workbench.activityBar.visible": false,
-    "workbench.colorTheme": "Quiet Light",
+    "workbench.colorTheme": "Solarized Light",
     "workbench.editor.enablePreview": false,
     "workbench.iconTheme": "file-icons",
     "workbench.list.horizontalScrolling": true,
