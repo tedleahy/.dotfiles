@@ -26,4 +26,25 @@ config/Typora/dictionaries/
 config/Typora/history.data
 config/Typora/profile.data
 config/Typora/typora.log
-
+config/Typora/themes/github.css
+config/Typora/themes/newsprint.css
+config/Typora/themes/night.css
+config/Typora/themes/old-themes/github.css
+config/Typora/themes/pixyll.css
+config/Typora/000015.log
+config/Typora/CURRENT
+config/Typora/Code Cache/
+config/Typora/LOCK
+config/Typora/LOG
+config/Typora/LOG.old
+config/Typora/MANIFEST-000014
+config/Typora/Network Persistent State
+config/Typora/themes/old-themes/Readme.md
+config/Typora/themes/old-themes/github/
+config/Typora/themes/old-themes/newsprint.css
+config/Typora/themes/old-themes/newsprint/
+config/Typora/themes/old-themes/night.css
+config/Typora/themes/old-themes/night/
+config/Typora/themes/old-themes/pixyll.css
+config/Typora/themes/old-themes/pixyll/
+config/Typora/themes/old-themes/whitey.css
