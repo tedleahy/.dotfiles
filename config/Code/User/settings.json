@@ -9,7 +9,7 @@
     "editor.tabSize": 2,
 
     "workbench.activityBar.visible": false,
-    "workbench.colorTheme": "Solarized Light",
+    "workbench.colorTheme": "One Monokai",
     "workbench.editor.enablePreview": false,
     "workbench.iconTheme": "file-icons",
     "workbench.list.horizontalScrolling": true,
@@ -30,7 +30,7 @@
     "terminal.integrated.fontSize": 16,
     "terminal.integrated.rendererType": "dom",
     "window.menuBarVisibility": "toggle",
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1,
 
     "keyboard.dispatch": "keyCode", // allows caps lock -> escape remapping to be recognised
     "vim.useSystemClipboard": true,
@@ -71,4 +71,8 @@
     "vim.debug.silent": true,
     "explorer.openEditors.visible": 0,
     "solargraph.formatting": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "eslint.alwaysShowStatus": true,
+    "eslint.format.enable": true,
+    "eslint.run": "onSave",
 }
