@@ -48,3 +48,8 @@ config/Typora/themes/old-themes/night/
 config/Typora/themes/old-themes/pixyll.css
 config/Typora/themes/old-themes/pixyll/
 config/Typora/themes/old-themes/whitey.css
+
+config/Code/.org.chromium.Chromium.8fjqpB
+config/Code/Code Cache/
+config/Code/Session Storage/
+config/Code/TransportSecurity
