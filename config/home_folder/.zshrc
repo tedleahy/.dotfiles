@@ -7,7 +7,7 @@ export ZSH=~/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="cloud"
+ZSH_THEME="avit"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
@@ -126,12 +126,20 @@ export PATH="/snap/bin:$PATH"
 # opt out of .NET data collection by microsoft
 export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+if which nodenv > /dev/null; then
+  eval "$(nodenv init -)"
+fi
+
 export PATH="$HOME/.rbenv/bin:$PATH"
 
 if which rbenv > /dev/null; then
 	eval "$(rbenv init -)"
 fi
+
+export PLATFORM_TOOLS_PATH="$HOME/util/platform-tools"
+if [ -d "$PLATFORM_TOOLS_PATH" ]; then
+  export PATH="$PLATFORM_TOOLS_PATH:$PATH"
+fi
+
+export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
 
