@@ -69,9 +69,7 @@ alias cbcp="xclip -sel clip"
 alias ls="lsd"
 alias l="lsd -l"
 alias zshf5="source ~/.zshrc"
-alias open="xdg-open"
 alias gsa="gnome-screenshot -a"
-alias vim="vim"
 alias rsyncr="rsync -r --info=progress2"
 alias starts="~/config_files/sway/launch.sh"
 alias t="typora"
@@ -128,27 +126,18 @@ if which thefuck > /dev/null; then
     eval $(thefuck --alias)
 fi
 
-# Ruby gems
-if which ruby >/dev/null && which gem >/dev/null; then
-    PATH="~/.rbenv/versions/$(cat ~/.rbenv/version)/bin:$PATH"
-fi
+# Add .scripts directory (for personal scripts) to PATH
+export PATH="$HOME/.scripts:$PATH"
 
-export PATH="$HOME/.local/bin:$PATH"
 export PATH="/sbin:$PATH"
 export PATH="/snap/bin:$PATH"
 
 # opt out of .NET data collection by microsoft
 export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 
-if which nodenv > /dev/null; then
-  eval "$(nodenv init -)"
-fi
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-
-if which rbenv > /dev/null; then
-	eval "$(rbenv init -)"
-fi
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 export PLATFORM_TOOLS_PATH="$HOME/util/platform-tools"
 if [ -d "$PLATFORM_TOOLS_PATH" ]; then
@@ -157,3 +146,26 @@ fi
 
 export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
 
+# Don't run homebrew update every time you install a package
+export HOMEBREW_NO_AUTO_UPDATE=1
+
+# For stack
+export PATH="$HOME/.local/bin:$PATH"
+
+
+##    ##
+# Perl #
+##    ##
+PATH="/Users/tleahy/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/Users/tleahy/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/tleahy/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/tleahy/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/tleahy/perl5"; export PERL_MM_OPT;
+
+if which plenv > /dev/null; then eval "$(plenv init - zsh)"; fi
+
+##        ##
+# Catalyst #
+##        ##
+
+if [ -e /Users/tleahy/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/tleahy/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
