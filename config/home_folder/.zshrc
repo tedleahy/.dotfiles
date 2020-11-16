@@ -43,6 +43,17 @@ pman() { man -Tpdf $1 | zathura - }
 
 tt () { touch $1 && typora $1 & }
 
+function mkdircd() {
+  mkdir $1 && cd $1
+}
+
+function filesync_mf() {
+    while sleep 1; do
+        rsync -ruv --exclude={'root','local','node_modules','vendor'} /Users/tleahy/projects/messagefocus/* ted.leahy@dev-2:/home/ted.leahy/messagefocus
+        # rsync -ru --include={'lib'} --verbose /Users/tleahy/projects/messagefocus/* ted.leahy@dev-2:/home/ted.leahy/messagefocus
+    done
+}
+
 # ls after changing directory
 chpwd() lsd
 
@@ -101,6 +112,9 @@ alias gc="git commit"
 alias gd="git diff"
 alias gs="git status"
 alias gp="git push"
+alias gbc="git branch | cat"
+alias gst="git stash"
+alias gstp="git stash pop"
 
 # Rails aliases
 alias rdm="rails db:migrate"
