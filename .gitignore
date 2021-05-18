@@ -53,3 +53,5 @@ config/Code/.org.chromium.Chromium.8fjqpB
 config/Code/Code Cache/
 config/Code/Session Storage/
 config/Code/TransportSecurity
+
+config/nvim/autoload
