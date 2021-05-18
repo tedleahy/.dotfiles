@@ -4,7 +4,7 @@
 #Needed for i3-gaps
 #hide_edge_borders both
 for_window [class="^.*"] border pixel 2
-font pango:"Droid Sans Mono Nerd Font 11"
+font pango:"Inconsolata Nerd Font 11"
 set $mod Mod4
 set $term st
 set $flash --no-startup-id bash ~/.scripts/flash_win.sh
@@ -13,7 +13,6 @@ set $flash --no-startup-id bash ~/.scripts/flash_win.sh
 for_window [class="Gtk-example"] floating enable
 for_window [class="Gi-gtk-calculator"] floating enable
 for_window [class="Ghc"] floating enable
-
 
 #Increase key rate
 exec --no-startup-id xset r rate 300 50
@@ -136,8 +135,8 @@ bindsym $mod+c					exec --no-startup-id chromium --app="https://calendar.google.
 bindsym $mod+v       split toggle
 bindsym $mod+Shift+v focus parent
 
-bindsym $mod+b          exec --no-startup-id chromium
-bindsym $mod+Shift+b    exec --no-startup-id chromium --incognito
+bindsym $mod+b          exec --no-startup-id firefox
+bindsym $mod+Shift+b    exec --no-startup-id firefox --private-window
 
 bindsym $mod+n          exec --no-startup-id google-chrome-stable --app="https://netflix.com"
 # bindsym $mod+Shift+n
