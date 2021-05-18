@@ -156,7 +156,6 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export PATH="$HOME/.local/bin:$PATH"
 
 eval "$(nodenv init -)"
-eval "$(rbenv init -)"
 
 ##    ##
 # Perl #
