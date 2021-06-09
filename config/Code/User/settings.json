@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "'Droid Sans Mono for Powerline Nerd Font Complete', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "'Inconsolata Nerd Font', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontSize": 18,
     "editor.formatOnPaste": true,
     "editor.lineNumbers": "relative",
@@ -24,7 +24,7 @@
     "ruby.specCommand": "bin/rspec",
     "ruby.specSaveFile": true,
     "search.quickOpen.includeSymbols": true,
-    "terminal.integrated.fontFamily": "DroidSansMono Nerd Font",
+    "terminal.integrated.fontFamily": "Inconsolata Nerd Font",
     "terminal.integrated.fontSize": 16,
     "terminal.integrated.rendererType": "dom",
     "window.menuBarVisibility": "toggle",
@@ -72,7 +72,7 @@
     "eslint.run": "onSave",
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
-    "workbench.colorTheme": "Cobalt Next",
+    "workbench.colorTheme": "Default Dark+",
     "explorer.confirmDragAndDrop": false,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "[typescriptreact]": {

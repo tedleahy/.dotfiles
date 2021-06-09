@@ -56,20 +56,11 @@ Plugin 'godlygeek/tabular'
 " Automaticall insert closing HTML tags
 Plugin 'HTML-AutoCloseTag'
 
+" Comment out lines with ctrl+/
 Plugin 'tpope/vim-commentary'
 
-" Haskell plugins
-Plugin 'neovimhaskell/haskell-vim'
-Plugin 'alx741/vim-hindent'
-Plugin 'dense-analysis/ale'
-
-" Rails plugins
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'ngmy/vim-rubocop'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'mattn/emmet-vim'
+" Intellisense
+Plugin 'neoclide/coc.nvim'
 
 call vundle#end()
 

@@ -100,7 +100,10 @@ alias cfset="vim ~/.scripts/setup.sh"
 alias cfp="vim ~/.config/polybar/config"
 alias cfr="vim ~/.config/redshift/redshift.conf"
 alias cfd="vim ~/Build/dwm/config.h"
-alias cfv="vim ~/.vimrc"
+# alias cfv="vim ~/.vimrc"
+alias cfv="nvim ~/.config/nvim/init.vim"
+alias cfvp="nvim ~/.config/nvim/vim-plug/plugins.vim"
+alias cfvs="nvim ~/.config/nvim/general/settings.vim"
 alias cfs="vim ~/.config/sway/config"
 alias cfi="vim ~/.config/i3/config"
 alias cfh="vim ~/.hyper.js"
@@ -152,20 +155,13 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 # For stack
 export PATH="$HOME/.local/bin:$PATH"
 
+eval "$(nodenv init -)"
 
 ##    ##
 # Perl #
 ##    ##
-PATH="/Users/tleahy/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/Users/tleahy/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/Users/tleahy/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/Users/tleahy/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/tleahy/perl5"; export PERL_MM_OPT;
-
-if which plenv > /dev/null; then eval "$(plenv init - zsh)"; fi
-
-##        ##
-# Catalyst #
-##        ##
+source ~/perl5/perlbrew/etc/bashrc
+export MESSAGEFOCUS_WEB_PORT=3000
+export PERL5LIB="$PWD/local/lib/perl5"
 
 if [ -e /Users/tleahy/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/tleahy/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
