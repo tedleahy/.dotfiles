@@ -1,0 +1,18 @@
+prompt=">>>"
+
+[ReadLine]
+history_file = .hist
+history_length = 10000
+
+[Pager]
+pager = less
+
+[Autocomplete::Methods]
+[Autocomplete::Keywords]
+[Autocomplete::Globals]
+[Autocomplete::Commands]
+[Autocomplete::Lexicals]
+[Autocomplete::Packages]
+[Colors]
+[DataPrinter]
+[Interrupt]
