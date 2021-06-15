@@ -26,7 +26,7 @@ nnoremap <C-s> :w<CR>
 " Alternate way to quit
 nnoremap <C-Q> :wq!<CR>
 " Alternate way to close buffer
-nnoremap <C-w> :bd<CR>
+nnoremap <C-q> :bd<CR>
 " Alternate way to go to next buffer
 nnoremap <C-n> :bn<CR>
 " Alternate way to go to previous buffer

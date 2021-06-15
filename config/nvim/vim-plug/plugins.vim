@@ -25,15 +25,30 @@ Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/NERDTree'
 nmap <silent> <leader>f :NERDTreeToggle<CR>
 
-" Auto pairs for '(' '[' '{'
-Plug 'jiangmiao/auto-pairs'
+" Fuzzy File Finder
+Plug 'junegunn/fzf.vim'
+nmap <C-t> :Files<CR>
+
 " Conquerer of Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Prettier (Formatter)
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+let g:prettier#autoformat_require_pragma = 0
+
+" Comment/uncomment lines/selections
+Plug 'tpope/vim-commentary'
+nmap <C-_> gcc
+
 " Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Ranger
-Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+
+" Autoclose brackets etc.
+Plug 'Raimondi/delimitMate'
+
+" Vim/Tmux easy navigation with ctrl-h,j,k,l
+Plug 'christoomey/vim-tmux-navigator'
 
 " Perl
 " Mojolicious
