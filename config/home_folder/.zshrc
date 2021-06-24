@@ -78,11 +78,13 @@ alias psb="sleep 5m && play ~/Music/ding.wav"
 alias plb="sleep 15m && play ~/Music/ding.wav"
 alias lock_and_suspend="i3lockmore -ef --blur 4 --lock-icon ~/.config/i3/lock.png && systemctl suspend"
 alias pip_i="pip install --user"
+alias tn="tmux new"
+alias ta="tmux attach"
 
 alias cpscrshot="~/.scripts/cpscrshot"
 alias gmd="~/.scripts/generate_markdown_contents"
 
-alias yi="yay --noconfirm -S"
+alias yi="yay --noconfirm --needed -S"
 alias yr="yay -R"
 alias ys="yay -Ss"
 alias yqs="yay -Qs"
@@ -95,18 +97,17 @@ alias as="apt-cache search"
 alias aqs="dpkg -l | grep"
 alias aup="sudo apt update && sudo apt upgrade"
 
-alias cfz="vim ~/.zshrc"
-alias cfset="vim ~/.scripts/setup.sh"
-alias cfp="vim ~/.config/polybar/config"
-alias cfr="vim ~/.config/redshift/redshift.conf"
-alias cfd="vim ~/Build/dwm/config.h"
+alias cfz="nvim ~/.zshrc"
+alias cfset="nvim ~/.scripts/setup.sh"
+alias cfp="nvim ~/.config/polybar/config"
+alias cfr="nvim ~/.config/redshift/redshift.conf"
+alias cfd="nvim ~/Build/dwm/config.h"
 # alias cfv="vim ~/.vimrc"
 alias cfv="nvim ~/.config/nvim/init.vim"
 alias cfvp="nvim ~/.config/nvim/vim-plug/plugins.vim"
 alias cfvs="nvim ~/.config/nvim/general/settings.vim"
-alias cfs="vim ~/.config/sway/config"
-alias cfi="vim ~/.config/i3/config"
-alias cfh="vim ~/.hyper.js"
+alias cfvk="nvim ~/.config/nvim/keys/mappings.vim"
+alias cfi="nvim ~/.config/i3/config"
 
 alias ga="git add"
 alias gc="git commit"
@@ -160,8 +161,13 @@ eval "$(nodenv init -)"
 ##    ##
 # Perl #
 ##    ##
-source ~/perl5/perlbrew/etc/bashrc
 export MESSAGEFOCUS_WEB_PORT=3000
 export PERL5LIB="$PWD/local/lib/perl5"
 
 if [ -e /Users/tleahy/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/tleahy/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+PATH="/home/ted/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/ted/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/ted/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/ted/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/ted/perl5"; export PERL_MM_OPT;

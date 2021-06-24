@@ -6,7 +6,7 @@
 for_window [class="^.*"] border pixel 2
 font pango:"Inconsolata Nerd Font 11"
 set $mod Mod4
-set $term st
+set $term alacritty
 set $flash --no-startup-id bash ~/.scripts/flash_win.sh
 
 # Default Floating
@@ -23,7 +23,7 @@ exec --no-startup-id nm-applet
 #Bluetooth applet:
 exec --no-startup-id blueman-applet
 #Enable tap-to-click
-#exec xinput set-prop "Synaptics tm2962-001" "libinput Tapping Enabled" 1
+exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 #Configure keyboard
 exec_always setxkbmap -model macintosh -layout gb -option caps:escape
 #Start Compton (for transparency)
@@ -312,10 +312,14 @@ bindsym XF86Search		exec $BROWSER https://duckduckgo.com
 #bindsym XF86Finance		exec
 #bindsym XF86Game		exec
 bindsym XF86Shop		exec $BROWSER https://ebay.com
-bindsym XF86MonBrightnessDown	      exec --no-startup-id light -U 5 
-bindsym XF86MonBrightnessUp    	    exec --no-startup-id light -A 5 
-bindsym Shift+XF86MonBrightnessDown	exec --no-startup-id light -U 2
-bindsym Shift+XF86MonBrightnessUp   exec --no-startup-id light -A 2
+#bindsym XF86MonBrightnessDown	        exec --no-startup-id light -U 5 
+#bindsym XF86MonBrightnessUp    	    exec --no-startup-id light -A 5 
+#bindsym Shift+XF86MonBrightnessDown	exec --no-startup-id light -U 2
+#bindsym Shift+XF86MonBrightnessUp      exec --no-startup-id light -A 2
+bindsym XF86MonBrightnessDown	        exec --no-startup-id brightnessctl s 5%-
+bindsym XF86MonBrightnessUp    	        exec --no-startup-id brightnessctl s +5% 
+bindsym Shift+XF86MonBrightnessDown	    exec --no-startup-id brightnessctl s 2%-
+bindsym Shift+XF86MonBrightnessUp       exec --no-startup-id brightnessctl s +2%
 bindsym XF86AudioMedia	    	exec $music
 bindsym XF86Display    	        exec --no-startup-id arandr
 #bindsym XF86KbdLightOnOff	exec
@@ -329,8 +333,3 @@ bindsym XF86Documents		exec $term -e ranger ~/Documents
 #bindsym XF86Bluetooth		exec
 bindsym XF86WLAN		exec --no-startup-id sudo systemctl restart NetworkManager
 
-#bar {
-#    status_command bumblebee-status -m spotify battery disk pasink pacman datetime -p disk.format="{left}" battery.device="BAT1" -t solarized-powerline
-#
-#    position top
-#}
