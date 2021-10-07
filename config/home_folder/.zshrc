@@ -1,61 +1,40 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=~/bin:/usr/local/bin:$PATH
+# Enable auto-completion definitions (e.g. by git plugin)
+autoload -Uz compinit
+compinit
 
-# Path to your oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
+# Plugins #
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Use the oh-my-zsh git plugin without oh-my-zsh
+ZSH=~/.oh-my-zsh
+ZSH_CUSTOM=$ZSH/custom
+source $ZSH/lib/git.zsh
+source $ZSH/plugins/git/git.plugin.zsh
+alias gs="git status"
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="avit"
+source ~/.zsh/fzf-functions.zsh
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+autoload -Uz vcs_info
+precmd() { vcs_info }
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' formats '%b'
 
-# Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=7
+# Appearance #
+NEWLINE=$'\n'
+setopt PROMPT_SUBST
+PROMPT=$'%F{#FF0080}${PWD/#$HOME/~}%f %F{#5abce6}\UE0A0 ${vcs_info_msg_0_}%f ${NEWLINE}🐙 '
 
-# Uncomment the following line to enable command auto-correction.
-#ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-export EDITOR='vim'
+export EDITOR='nvim'
 
 total_runtime() { echo $(bc <<< "scale=2; $(echo $(find . -maxdepth 1 -iname '*.m4v' -exec ffprobe -v quiet -of csv=p=0 -show_entries format=duration {} \; | paste -sd+ -| bc)) / 60 / 60") hours }
-
-pman() { man -Tpdf $1 | zathura - }
-
-tt () { touch $1 && typora $1 & }
 
 function mkdircd() {
   mkdir $1 && cd $1
 }
 
-function filesync_mf() {
-    while sleep 1; do
-        rsync -ruv --exclude={'root','local','node_modules','vendor'} /Users/tleahy/projects/messagefocus/* ted.leahy@dev-2:/home/ted.leahy/messagefocus
-        # rsync -ru --include={'lib'} --verbose /Users/tleahy/projects/messagefocus/* ted.leahy@dev-2:/home/ted.leahy/messagefocus
-    done
-}
-
 # ls after changing directory
-chpwd() lsd
+chpwd() ls
+
+alias cdmf="cd ~/projects/messagefocus"
 
 alias r="ranger"
 alias rd="ranger ~/Downloads"
@@ -66,18 +45,14 @@ alias rv="ranger ~/Videos"
 alias rw="ranger ~/workspace"
 
 alias cbcp="xclip -sel clip"
-alias ls="lsd"
-alias l="lsd -l"
-alias zshf5="source ~/.zshrc"
+alias zr="source ~/.zshrc"
 alias gsa="gnome-screenshot -a"
 alias rsyncr="rsync -r --info=progress2"
-alias starts="~/config_files/sway/launch.sh"
 alias t="typora"
 alias pw="p wait && play ~/Music/ding.wav"
 alias psb="sleep 5m && play ~/Music/ding.wav"
 alias plb="sleep 15m && play ~/Music/ding.wav"
 alias lock_and_suspend="i3lockmore -ef --blur 4 --lock-icon ~/.config/i3/lock.png && systemctl suspend"
-alias pip_i="pip install --user"
 alias tn="tmux new"
 alias ta="tmux attach"
 
@@ -109,22 +84,10 @@ alias cfvs="nvim ~/.config/nvim/general/settings.vim"
 alias cfvk="nvim ~/.config/nvim/keys/mappings.vim"
 alias cfi="nvim ~/.config/i3/config"
 
-alias ga="git add"
-alias gc="git commit"
-alias gd="git diff"
-alias gs="git status"
-alias gp="git push"
-alias gbc="git branch | cat"
-alias gst="git stash"
-alias gstp="git stash pop"
-
 # Rails aliases
 alias rdm="rails db:migrate"
 alias rdr="rails db:rollback"
-
-alias stepsreset="rake db:drop && rake db:create && rake db:migrate && rake db:seed && rake forms:import && rake fake:all"
-
-alias rrg="rake routes | grep"
+alias rrg="rails routes | grep"
 
 if which thefuck > /dev/null; then
     eval $(thefuck --alias)
@@ -156,18 +119,22 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 # For stack
 export PATH="$HOME/.local/bin:$PATH"
 
-eval "$(nodenv init -)"
+source /opt/local/share/nvm/init-nvm.sh
 
 ##    ##
 # Perl #
 ##    ##
-export MESSAGEFOCUS_WEB_PORT=3000
-export PERL5LIB="$PWD/local/lib/perl5"
+export PATH="$HOME/.plenv/bin:$PATH"
+eval "$(plenv init - zsh)"
 
 if [ -e /Users/tleahy/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/tleahy/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
-PATH="/home/ted/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/ted/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/ted/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/ted/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/ted/perl5"; export PERL_MM_OPT;
+alias s="rsync -ruv --exclude={'local','vendor','node_modules','package.json'} --links /Users/tleahy/projects/messagefocus/* ted.leahy@10.154.171.41:/home/ted.leahy/messagefocus"
+
+export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+
+[ -f "/Users/tleahy/.ghcup/env" ] && source "/Users/tleahy/.ghcup/env" # ghcup-env
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(rbenv init -)"
