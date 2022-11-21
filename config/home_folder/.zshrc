@@ -9,7 +9,9 @@ ZSH=~/.oh-my-zsh
 ZSH_CUSTOM=$ZSH/custom
 source $ZSH/lib/git.zsh
 source $ZSH/plugins/git/git.plugin.zsh
+# alias overrides
 alias gs="git status"
+alias gst="git stash"
 
 source ~/.zsh/fzf-functions.zsh
 
@@ -32,7 +34,7 @@ function mkdircd() {
 }
 
 # ls after changing directory
-chpwd() ls
+chpwd() lsd
 
 alias cdmf="cd ~/projects/messagefocus"
 
@@ -77,7 +79,6 @@ alias cfset="nvim ~/.scripts/setup.sh"
 alias cfp="nvim ~/.config/polybar/config"
 alias cfr="nvim ~/.config/redshift/redshift.conf"
 alias cfd="nvim ~/Build/dwm/config.h"
-# alias cfv="vim ~/.vimrc"
 alias cfv="nvim ~/.config/nvim/init.vim"
 alias cfvp="nvim ~/.config/nvim/vim-plug/plugins.vim"
 alias cfvs="nvim ~/.config/nvim/general/settings.vim"
@@ -88,6 +89,14 @@ alias cfi="nvim ~/.config/i3/config"
 alias rdm="rails db:migrate"
 alias rdr="rails db:rollback"
 alias rrg="rails routes | grep"
+
+# Docker aliases
+alias dc="docker compose"
+alias dcb="dc build"
+alias dcu="dc up"
+alias dcub="dcu --build"
+alias dcr="dc run"
+alias dcrbe="dcr backend"
 
 if which thefuck > /dev/null; then
     eval $(thefuck --alias)
@@ -119,17 +128,19 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 # For stack
 export PATH="$HOME/.local/bin:$PATH"
 
-source /opt/local/share/nvm/init-nvm.sh
-
 ##    ##
 # Perl #
 ##    ##
 export PATH="$HOME/.plenv/bin:$PATH"
 eval "$(plenv init - zsh)"
 
+# Flutter
+export PATH="$PATH:/opt/flutter/bin"
+
 if [ -e /Users/tleahy/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/tleahy/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
-alias s="rsync -ruv --exclude={'local','vendor','node_modules','package.json'} --links /Users/tleahy/projects/messagefocus/* ted.leahy@10.154.171.41:/home/ted.leahy/messagefocus"
+# alias s="rsync -ruv --exclude={'local','vendor','node_modules','package.json'} --links /Users/tleahy/projects/messagefocus/* ted.leahy@10.154.171.41:/home/ted.leahy/messagefocus"
+alias s="rsync -ruv --exclude={'local','vendor','node_modules','package.json'} --links ./* ted.leahy@10.154.171.41:/home/ted.leahy/messagefocus"
 
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
@@ -137,4 +148,10 @@ export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+################
+# Ruby/Rails #
+################
 eval "$(rbenv init -)"
+
+alias rspec="bin/rspec"
+alias rails="bin/rails"
