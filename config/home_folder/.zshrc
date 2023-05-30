@@ -5,6 +5,10 @@ fi
 export TERM=xterm-256color # Make colors work in vim + tmux
 export EDITOR="nvim"
 
+## Plugins
+# Fish-like autocomplete
+source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # ls after changing directory
 chpwd() lsd
 
