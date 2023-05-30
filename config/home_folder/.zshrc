@@ -13,12 +13,27 @@ source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 chpwd() lsd
 
 # Configure the prompt
-source ~/.git-prompt.sh # provides the __git_ps1 command
+# Load version control information
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
+# Format the vcs_info_msg_0_ variable
+setopt PROMPT_SUBST
+zstyle ':vcs_info:git:*' formats " %b"
 
 username="%F{200}%n%f"
 cwd="%F{40}%~/%f"
 prompt_char="%F{200}🌵%f"
-git="%F{160}$(__git_ps1)%f"
+git_info="%F{75}${vcs_info_msg_0_}%f"
 NEWLINE=$'\n'
 
-PROMPT="${username} ${cwd}${git}${NEWLINE}${prompt_char} "
+PROMPT="${username} ${cwd} ${git_info}${NEWLINE}${prompt_char} "
+
+# NVM:
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# Plenv:
+export PATH="$HOME/.plenv/bin:$PATH"
+eval "$(plenv init - zsh)"
