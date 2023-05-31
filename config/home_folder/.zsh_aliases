@@ -29,6 +29,7 @@ alias grs="git reset"
 alias gst="git stash"
 alias gstl="git stash list"
 alias gstp="git stash pop"
+alias gpsup="gp --set-upstream origin $(gb --show-current)"
 
 # For opening commonly-edited config files:
 alias cfz="nvim ~/.zshrc"
