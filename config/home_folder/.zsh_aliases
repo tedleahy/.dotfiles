@@ -45,9 +45,9 @@ alias cfi="nvim ~/.config/i3/config"
 
 # For MessageFocus:
 # Syncing
-alias s="rsync -ruv --exclude={'local','vendor'} --links ~/projects/messagefocus/* ted.leahy@10.154.171.41:/home/ted.leahy/messagefocus"
-alias su="rsync -ruv --exclude={'logs','local','vendor','cpanfile','cpanfile.snapshot','messagefocus_web.conf','messagefocus_web_local.conf','perl5.14.4.core','lib/MessageFocus/Job/CustomScript'} --links ~/project/messagefocus/* tleahy@ubuntu-test.fish.adestra.com:/home/tleahy/messagefocus"
-# Common commands
+alias s="rsync -ruvl --exclude={'logs','local','vendor','perl5.14.4.core','lib/MessageFocus/Job/CustomScript','node_modules','root'} ~/projects/messagefocus/* ted.leahy@10.154.171.41:/home/ted.leahy/messagefocus"
+alias su="rsync -ruvl --exclude={'logs','local','vendor','cpanfile','cpanfile.snapshot','messagefocus_web.conf','messagefocus_web_local.conf','perl5.14.4.core','lib/MessageFocus/Job/CustomScript'} ~/project/messagefocus/* tleahy@ubuntu-test.fish.adestra.com:/home/tleahy/messagefocus"
+
 alias fprove="PERL_FORKPROVE_IGNORE='runtime_error.t|local-unzip.t|config.t|fulltext-search|sftp_queue_size.t' carton exec -- forkprove -MTest::MockTime -MMessageFocus::Schema::AccountDB -MMessageFocus::Schema::SystemDB -MMessageFocus::Schema::InboundDB --state hot,slow,save"
 alias ce="carton exec --"
 
