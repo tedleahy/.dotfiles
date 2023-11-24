@@ -10,10 +10,6 @@ nnoremap <M-k>    :resize +2<CR>
 nnoremap <M-h>    :vertical resize -2<CR>
 nnoremap <M-l>    :vertical resize +2<CR>
 
-" I hate escape more than anything else
-inoremap jk <Esc>
-inoremap kj <Esc>
-
 " Easy CAPS
 inoremap <c-u> <ESC>viwUi
 nnoremap <c-u> viwU<Esc>
@@ -23,16 +19,6 @@ nnoremap <TAB> :bnext<CR>
 " SHIFT-TAB will go back
 nnoremap <S-TAB> :bprevious<CR>
 
-" Alternate way to save
-nnoremap <C-s> :w<CR>
-" Alternate way to quit
-nnoremap <C-Q> :wq!<CR>
-" Alternate way to close buffer
-nnoremap <C-q> :bd<CR>
-" Alternate way to go to next buffer
-nnoremap <C-n> :bn<CR>
-" Alternate way to go to previous buffer
-nnoremap <C-p> :bp<CR>
 " Use control-c instead of escape
 nnoremap <C-c> <Esc>
 " <TAB>: completion.
