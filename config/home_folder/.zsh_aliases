@@ -28,6 +28,13 @@ alias cfs="nvim ~/.config/sway/config"
 alias cfv="nvim ~/.config/nvim"
 alias cfva="nvim ~/.config/nvim/lua/config/autocmds.lua"
 
+# Yay package manager
+alias yi="yay -S --noconfirm"
+alias ys="yay -Ss"
+alias yr="yay -R --noconfirm"
+alias yqs="yay -Qs"
+alias yup="yay -Syyua --noconfirm"
+
 # APT Package Manager
 alias ai="sudo apt install -y"
 alias ar="sudo apt remove"
@@ -46,5 +53,5 @@ alias fprove="PERL_FORKPROVE_IGNORE='runtime_error.t|local-unzip.t|config.t|full
 alias ce="carton exec --"
 
 function mkdircd() {
-    mkdir $1 && cd $1
+    mkdir -p "$1" && cd "$1"
 }
