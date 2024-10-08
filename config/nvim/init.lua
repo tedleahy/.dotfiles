@@ -247,7 +247,7 @@ require('lazy').setup {
 }
 
 vim.opt.termguicolors = true
-vim.cmd.colorscheme 'vim-material'
+vim.cmd.colorscheme 'sonokai'
 
 -- Highlights
 vim.cmd.hi 'Comment gui=none'
