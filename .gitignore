@@ -8,6 +8,7 @@ config/Code/GPUCache/
 config/Code/Network Persistent State
 config/Code/User/globalStorage/
 config/Code/User/workspaceStorage/
+config/Code/User/History
 config/Code/languagepacks.json
 config/Code/logs/
 config/Code/machineid
