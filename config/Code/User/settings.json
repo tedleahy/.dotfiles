@@ -1,15 +1,14 @@
 {
     "editor.fontFamily": "'Inconsolata Nerd Font', 'monospace', monospace, 'Droid Sans Fallback'",
-    "editor.fontSize": 18,
+    "editor.fontSize": 16,
     "editor.formatOnPaste": true,
     "editor.lineNumbers": "relative",
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.rulers": [
-        130
+        120
     ],
     "editor.tabSize": 2,
-    "workbench.activityBar.visible": false,
     "workbench.editor.enablePreview": false,
     "workbench.iconTheme": "file-icons",
     "workbench.list.horizontalScrolling": true,
@@ -72,11 +71,15 @@
     "eslint.run": "onSave",
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
-    "workbench.colorTheme": "Default Dark+",
     "explorer.confirmDragAndDrop": false,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "workbench.sideBar.location": "right",
+    "workbench.activityBar.location": "default",
+    "codeium.enableConfig": {
+        "*": true,
+        "nix": true
+    },
 }
