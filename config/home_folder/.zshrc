@@ -79,6 +79,8 @@ plugins=(git zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+EDITOR="nvim"
+
 chpwd() {
   ls
 }
@@ -91,12 +93,12 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-eval "$(rbenv init - zsh)"
+#eval "$(rbenv init - zsh)"
 
-PATH="/home/ted/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/ted/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/ted/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/ted/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/ted/perl5"; export PERL_MM_OPT;
-
-eval "$(plenv init - zsh)"
+# PATH="/home/ted/perl5/bin${PATH:+:${PATH}}"; export PATH;
+# PERL5LIB="/home/ted/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+# PERL_LOCAL_LIB_ROOT="/home/ted/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+# PERL_MB_OPT="--install_base \"/home/ted/perl5\""; export PERL_MB_OPT;
+# PERL_MM_OPT="INSTALL_BASE=/home/ted/perl5"; export PERL_MM_OPT;
+#
+# eval "$(plenv init - zsh)"
