@@ -8,7 +8,6 @@ return {
   'rhysd/vim-color-spring-night',
   'p00f/alabaster.nvim',
   'loctvl842/monokai-pro.nvim',
-  'lunacookies/vim-colors-xcode',
   'kristijanhusak/vim-hybrid-material',
   'keitanakamura/neodark.vim',
   'hzchirs/vim-material',
