@@ -1,0 +1,18 @@
+return {
+  'sainnhe/sonokai',
+  'olimorris/onedarkpro.nvim',
+  'folke/tokyonight.nvim',
+  'ntbbloodbath/sweetie.nvim',
+  'catppuccin/nvim',
+  'rmehri01/onenord.nvim',
+  'rhysd/vim-color-spring-night',
+  'p00f/alabaster.nvim',
+  'loctvl842/monokai-pro.nvim',
+  'kristijanhusak/vim-hybrid-material',
+  'keitanakamura/neodark.vim',
+  'hzchirs/vim-material',
+  'connorholyday/vim-snazzy',
+  'tyrannicaltoucan/vim-quantum',
+  'christianchiarulli/nvcode-color-schemes.vim',
+  'romgrk/doom-one.vim',
+}
