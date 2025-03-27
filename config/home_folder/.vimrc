@@ -59,9 +59,6 @@ Plugin 'HTML-AutoCloseTag'
 " Comment out lines with ctrl+/
 Plugin 'tpope/vim-commentary'
 
-" Intellisense
-Plugin 'neoclide/coc.nvim'
-
 call vundle#end()
 
 filetype plugin indent on

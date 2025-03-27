@@ -12,8 +12,6 @@ ZSH_THEME="avit"
 
 source "$HOME/.zsh_aliases"
 
-if which plenv > /dev/null; then eval "$(plenv init - zsh)"; fi
-
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -86,19 +84,45 @@ chpwd() {
 }
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Add postgres binaries to path
 export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-#eval "$(rbenv init - zsh)"
+PATH="/home/ted/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/ted/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/ted/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/ted/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/ted/perl5"; export PERL_MM_OPT;
 
-# PATH="/home/ted/perl5/bin${PATH:+:${PATH}}"; export PATH;
-# PERL5LIB="/home/ted/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-# PERL_LOCAL_LIB_ROOT="/home/ted/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-# PERL_MB_OPT="--install_base \"/home/ted/perl5\""; export PERL_MB_OPT;
-# PERL_MM_OPT="INSTALL_BASE=/home/ted/perl5"; export PERL_MM_OPT;
-#
-# eval "$(plenv init - zsh)"
+export PATH="$HOME/.plenv/bin:$PATH"
+if which plenv > /dev/null; then eval "$(plenv init - zsh)"; fi
+
+# export MESSAGEFOCUS_WEB_PORT=3030
+
+export PATH="/opt/homebrew/bin:$PATH"
+
+eval "$(fzf --zsh)"
+
+# python
+# export PATH="$HOME/.local/bin:$PATH"
+
+# bun completions
+[ -s "/Users/tleahy/.bun/_bun" ] && source "/Users/tleahy/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export PATH="$HOME/flutter/bin:$PATH"
+
+eval "$(rbenv init - --no-rehash zsh)"
+
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+
+export PATH="$GOROOT/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"
