@@ -11,10 +11,16 @@ alias alacritty="alacritty -o font.size=13"
 # brightness control
 alias bu="sudo brightnessctl s +10%"
 alias bd="sudo brightnessctl s 10%-"
+alias c="clear"
+alias n="nvim"
+alias ws="windsurf"
 
-# Git
+# Git
 alias gs="git status"
+alias gmnf="git merge --no-ff"
 alias lg="lazygit"
+# fuzzy find branches with fzf, checkout whichever one you choose
+alias gcof="git branch | fzf | xargs -I {} git checkout '{}'"
 
 # For opening commonly-edited config files:
 alias cfz="nvim ~/.zshrc"
@@ -45,9 +51,10 @@ alias es="exercism submit"
 # For MessageFocus:
 # Syncing
 alias s="rsync -ruvl --exclude={'logs','local','vendor','perl5.14.4.core','lib/MessageFocus/Job/CustomScript','node_modules','root'} ~/projects/messagefocus/* ted.leahy@10.154.171.41:/home/ted.leahy/messagefocus"
-#alias su="rsync -ruvl --exclude={'logs','local','vendor','cpanfile','cpanfile.snapshot','messagefocus_web.conf','messagefocus_web_local.conf','perl5.14.4.core','lib/MessageFocus/Job/CustomScript'} ~/project/messagefocus/* tleahy@ubuntu-test.fish.adestra.com:/home/tleahy/messagefocus"
-alias d41="ssh dev-41"
-alias d100="ssh dev-100"
+# Sync all the files that have changed as shown by git status
+alias sg="git status --porcelain | cut -c4- | rsync -avzR --files-from=- . ted.leahy@dev-41:/home/ted.leahy/messagefocus"
+alias d41="ssh -q -L 3030:localhost:3030 -L 9030:localhost:9030 dev-41"
+alias d100="ssh -q -L 3030:localhost:3030 -L 9030:localhost:9030 dev-100"
 
 alias fprove="PERL_FORKPROVE_IGNORE='runtime_error.t|local-unzip.t|config.t|fulltext-search|sftp_queue_size.t' carton exec -- forkprove -MTest::MockTime -MMessageFocus::Schema::AccountDB -MMessageFocus::Schema::SystemDB -MMessageFocus::Schema::InboundDB --state hot,slow,save"
 alias ce="carton exec --"
@@ -71,6 +78,9 @@ alias app-logs="dl messagefocus-app-1 -f"
 alias clamav-logs="dl messagefocus-clamav-1 -f"
 alias build-tests="docker build -f Dockerfile.perl-tests -t innovation167/messagefocus-perl-tests ."
 alias run-tests="docker run -ti innovation167/messagefocus-perl-tests"
+
+# Rails
+alias r="bin/rails"
 
 function mkdircd() {
     mkdir -p "$1" && cd "$1"
